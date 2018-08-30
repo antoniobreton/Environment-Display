@@ -476,6 +476,10 @@ void OzOLED::init(){
     setNormalDisplay();  //default Set Normal Display
 	setPageMode();	// default addressing mode
 	clearDisplay();
+	sendCommand(0xA8); //Multiplexer
+	sendCommand(0x1F);
+		sendCommand(0xDA); // Comm pins
+		sendCommand(0x02);
 	setCursorXY(0,0);
 	sendCommand(0x8d); //Charge Pump
         sendCommand(0x14);
